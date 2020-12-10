@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Big+Shoulders+Stencil+Text:wght@900&family=Keania+One&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a032f3af50.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="teste.js"></script>
+        <script src="https://kit.fontawesome.com/a032f3af50.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-replace-svg></script> -->
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="index.css">
+        <title>Chumbador</title>
+    </head>
+    <body>
+        <header>
+            <i class="fas fa-bars"></i>
+        </header>
+
+        <h1>Calculo da massa do chumbador</h1>
+        <div class="entradaSaida">
+            <div class="dadosEntrada">
+                <h3>Entrada de dados</h3>
+                <ul>
+                    <label for="tipo">Tipo:</label>
+                    <select name="tipo" id="tipo" onchange="escolherTipo();teste()">
+                        <option value="">Tipo</option>
+                        <option value="I">I</option>
+                        <option value="K">K</option>
+                        <option value="M">M</option>
+                    </select>
+
+                    <label for="subtipo">Subtipo:</label>
+                    <select name="subtipo" id="subtipo" onchange="teste()">
+                        <option value="">Subtipo</option>
+                    </select>
+
+                    <label for="diametro">Diâmetro:</label>
+                    <select name="diametro" id="diametro" onchange="teste()">
+                        <option value="">Diâmetro</option>
+                    </select>
+
+                    <label for="projecao">Projeção:</label>
+                    <input type="number" id="projecao" onchange="teste();calcularRosca()" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">Embutimento:</label>
+                    <input type="number" id="embutimento" onchange="teste()" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">Chapa:</label>
+                    <input type="number" id="chapa" onchange="calcularRosca()" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">Grout:</label>
+                    <input type="number" id="grout" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">h Perfil:</label>
+                    <input type="number" id="hPerfil" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">Teflon:</label>
+                    <input type="number" id="teflon" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">Espessura:</label>
+                    <input type="number" id="espessura" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">Comprimento:</label>
+                    <input type="number" id="comprimento" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">Largura:</label>
+                    <input type="number" id="largura" min="0" oninput="validity.valid||(value='')">
+
+                    <label for="">Quantidade:</label>
+                    <input type="number" id="quantidade" min="0" oninput="validity.valid||(value='')">
+                </ul>
+            </div>
+
+            <div class="dadosSaidaChumbador">
+                <h3>Medidas do chumbador</h3>
+                <ul>
+                    <label for="">A:</label>
+                    <input type="number" class="a" disabled="disabled" value=''>
+                    <label for="">B:</label>
+                    <input type="number" class="b" disabled="disabled" value=''>
+                    <label for="">C:</label>
+                    <input type="number" class="c" disabled="disabled" value=''>
+                    <label for="">D:</label>
+                    <input type="number" class="d" disabled="disabled" value=''>
+                    <label for="">E:</label>
+                    <input type="number" class="e" disabled="disabled" value=''>
+                    <label for="">F:</label>
+                    <input type="number" class="f" disabled="disabled" value=''>
+                    <label for="">G:</label>
+                    <input type="number" class="g" disabled="disabled" value=''>
+                    <label for="">H:</label>
+                    <input type="number" class="h" disabled="disabled" value=''>
+                    <label for="">I:</label>
+                    <input type="number" class="i" disabled="disabled" value=''>
+                    <label for="">J:</label>
+                    <input type="number" class="j" disabled="disabled" value=''>
+                    <label for="">K:</label>
+                    <input type="number" class="k" disabled="disabled" value=''>
+                    <label for="">L:</label>
+                    <input type="number" class="l" disabled="disabled" value=''>
+                    <label for="">N:</label>
+                    <input type="number" class="n" disabled="disabled" value=''>
+                    <label for="">PR:</label>
+                    <input type="number" class="pr" disabled="disabled" value=''>
+                    <label for="">Ri:</label>
+                    <input type="number" class="ri" disabled="disabled" value=''>
+                    <label for="">Ø:</label>
+                    <input type="number" class="diamSimbolo" disabled="disabled" value=''>
+                    <label for="">Rosca:</label>
+                    <input type="number" class="rosca" disabled="disabled" value=''>
+                    <label for="">Pino:</label>
+                    <input type="number" class="pino" disabled="disabled" value=''>
+                </ul>
+            </div>
+
+            <div class="dadosSaidaLuva">
+                <h3>Luva</h3>
+                <ul>
+                    <label for="">D:</label>
+                    <input type="number" class="d" disabled="disabled" value='1233'>
+                    <label for="">E:</label>
+                    <input type="number" class="e" disabled="disabled">
+                    <label for="">F:</label>
+                    <input type="number" class="f" disabled="disabled">
+                    <label for="">G:</label>
+                    <input type="number" class="g" disabled="disabled">
+                    <label for="">H:</label>
+                    <input type="number" class="h" disabled="disabled">
+                    <label for="">I:</label>
+                    <input type="number" class="i" disabled="disabled">
+                    <label for="">J:</label>
+                    <input type="number" class="j" disabled="disabled">
+                </ul>
+            </div>
+        </div>
+
+        <div class="tabela">
+            <div class="resultado1">N°</div>
+            <div class="resultado2">QTD</div>
+            <div class="resultado3">Descrição</div>
+            <div class="resultado4">Comp(m)/Área(m²)</div>
+            <div class="resultado5">Massa Unit. (Kg/m ; Kg/m²)</div>
+            <div class="resultado6">Massa Total (Kg)</div>
+            <div class="resultado7">0</div>
+            <div class="resultado8">0</div>
+            <div class="resultado9">0</div>
+            <div class="resultado10">0</div>
+            <div class="resultado11">0</div>
+            <div class="resultado12">0</div>
+            <div class="resultado13">0</div>
+            <div class="resultado14">0</div>
+            <div class="resultado15">0</div>
+            <div class="resultado16">0</div>
+            <div class="resultado17">0</div>
+            <div class="resultado18">0</div>
+            <div class="resultado19">0</div>
+            <div class="resultado20">0</div>
+            <div class="resultado21">0</div>
+            <div class="resultado22">0</div>
+            <div class="resultado23">0</div>
+            <div class="resultado24">0</div>
+            <div class="resultado25">0</div>
+            <div class="resultado26">0</div>
+            <div class="resultado27">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">0</div>
+            <div class="resultado">10</div>
+        </div>
+        
+        <footer>
+            <!--Informações de contato-->
+            <div class="contatos">
+                <a target="_blank" href="https://www.linkedin.com/in/juan-santos-63b1b338/">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:ssjuantj@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
