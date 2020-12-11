@@ -46,7 +46,7 @@ h1{
 
 .dadosEntrada ul{
   display: grid;
-  grid-template-columns: 100px 50px;
+  grid-template-columns: 110px 50px;
 }
 
 .dadosSaidaChumbador ul {
@@ -71,7 +71,7 @@ div ~ div ~ div h3, .dadosEntrada h3 {
 }
 
 .dadosSaidaChumbador {
-  width: 100px;
+  width: 110px;
 }
 
 select {
@@ -132,14 +132,31 @@ input[type=number]::-webkit-inner-spin-button {
   grid-template-rows: repeat(11, 1fr);
   grid-gap: 5px;
 }
+ */
 
-.dadosSaidaChumbador b[value=''],
-.dadosSaidaChumbador input[value=''] {
+.dadosSaidaLuva label:not([value]),
+.dadosSaidaLuva label[value=''],
+.dadosSaidaLuva label[value='0'],
+.dadosSaidaLuva input:not([value]),
+.dadosSaidaLuva input[value=''],
+.dadosSaidaLuva input[value='0'],
+
+.dadosSaidaChumbador label:not([value]),
+.dadosSaidaChumbador label[value=''],
+.dadosSaidaChumbador label[value='0'],
+.dadosSaidaChumbador input[value=''],
+.dadosSaidaChumbador input[value='0'] {
   display: none;
   overflow: hidden;
   visibility: hidden;
 }
- */
+
+label + label{
+  display: none;
+  overflow: hidden;
+  visibility: hidden;
+}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -156,8 +173,4 @@ a {
   color: #cccccc;
   /* color: rgb(91, 7, 160); */
   text-decoration: none;
-}
-
-.dadosSaidaLuva input {
-  content: attr(value);
 }

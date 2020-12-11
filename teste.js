@@ -68,12 +68,12 @@ function calcularRosca(){
         },
 
         rosca: function () {
-            document.querySelector('.rosca').setAttribute("value", "")
+            document.querySelectorAll('.rosca').forEach((e)=>{e.setAttribute("value", "")})
             if (chumbador.projecao && chumbador.chapa){
-                document.querySelector('.rosca').setAttribute("value", chumbador.projecao - chumbador.chapa)
+                document.querySelectorAll('.rosca').forEach((e)=>{e.setAttribute("value", chumbador.projecao - chumbador.chapa)})
             } else if (chumbador.projecao) {
                 let aaa = [123, 111]
-                document.querySelector('.rosca').setAttribute("value", chumbador.projecao)
+                document.querySelectorAll('.rosca').forEach((e)=>{e.setAttribute("value", chumbador.projecao)})
             }
         }
     }

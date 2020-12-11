@@ -134,18 +134,18 @@ function teste(){
         diam = bitola[i][0];
         if (diam === diametroValor) {
             var ri = bitola[i][23]
-            document.querySelector('.ri').setAttribute("value", "")
-            document.querySelector('.ri').setAttribute("value", ri)
+            document.querySelectorAll('.ri').forEach((e)=>{e.setAttribute("value", "")})
+            document.querySelectorAll('.ri').forEach((e)=>{e.setAttribute("value", ri)})
             var b = bitola[i][22]
             document.querySelectorAll('.b').forEach((e)=>{e.setAttribute("value", "")})
             document.querySelectorAll('.b').forEach((e)=>{e.setAttribute("value", b)})
             var a = bitola[i][21]
-            document.querySelector('.a').setAttribute("value", "")
-            document.querySelector('.a').setAttribute("value", a)
+            document.querySelectorAll('.a').forEach((e)=>{e.setAttribute("value", "")})
+            document.querySelectorAll('.a').forEach((e)=>{e.setAttribute("value", a)})
             var pesoArruela = bitola[i][18]
             var pesoPorca = bitola[i][10]
-            document.querySelector('.diamSimbolo').setAttribute("value", "")
-            document.querySelector('.diamSimbolo').setAttribute("value", bitola[i][0])
+            document.querySelectorAll('.diamSimbolo').forEach((e)=>{e.setAttribute("value", "")})
+            document.querySelectorAll('.diamSimbolo').forEach((e)=>{e.setAttribute("value", bitola[i][0])})
         }
         i++
     } while (i < bitola.length)
