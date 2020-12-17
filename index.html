@@ -61,7 +61,7 @@
                     </select>
 
                     <label for="diametro">Diâmetro:</label>
-                    <select name="diametro" id="diametro" onchange="teste()">
+                    <select name="diametro" id="diametro" onchange="teste(),calcularRosca()">
                         <option value="">Diâmetro</option>
                     </select>
 
@@ -75,8 +75,8 @@
                     <input type="number" id="chapa" onchange="calcularRosca()" min="0" oninput="validity.valid||(value='')">
 
                     <label for="grout">Grout:</label>
-                    <input type="number" id="grout" min="0" oninput="validity.valid||(value='')">
-
+                    <input type="number" id="grout" onchange="calcularRosca()" min="0" oninput="validity.valid||(value='')">
+<!-- 
                     <label for="hPerfil">h Perfil:</label>
                     <input type="number" id="hPerfil" min="0" oninput="validity.valid||(value='')">
 
@@ -91,7 +91,7 @@
 
                     <label for="largura">Largura:</label>
                     <input type="number" id="largura" min="0" oninput="validity.valid||(value='')">
-
+ -->
                     <label for="quantidade">Quantidade:</label>
                     <input type="number" id="quantidade" min="0" oninput="validity.valid||(value='')">
                 </ul>
@@ -160,7 +160,7 @@
             </div>
         </div>
 
-        <div class="tabela">
+        <!-- <div class="tabela">
             <div class="resultado1">N°</div>
             <div class="resultado2">QTD</div>
             <div class="resultado3">Descrição</div>
@@ -215,7 +215,7 @@
             <div class="resultado">0</div>
             <div class="resultado">0</div>
             <div class="resultado">10</div>
-        </div>
+        </div> -->
         
         <footer>
             <!--Informações de contato-->
