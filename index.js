@@ -171,7 +171,7 @@ function teste(){
     if (luva === "Não"){
         console.log(pesoBarra + pesoPorcas + pesoArruela)
         const resultado = document.querySelector('.resultado')
-        resultado.textContent = `Peso ` + (pesoBarra + pesoPorcas + pesoArruela)
+        /* resultado.textContent = `Peso ` + (pesoBarra + pesoPorcas + pesoArruela) */
     } else {
         console.log(pesoBarra + pesoPorcas + pesoArruela + " mais o peso da luva")
         const resultado = document.querySelector('.resultado1')

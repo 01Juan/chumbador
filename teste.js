@@ -87,6 +87,7 @@ function calcularRosca(){
             do {
                 subt0 = subtipoLista[i][0]
                 subt1 = subtipoLista[i][1]
+                console.log(chumbador.subtipoValor)
 
                 //Poderia ser usado a linha abaixo e eliminar o DO acima também, porem se a tabela da luva for atualizada, nada mudaria aqui.
                 // if (chumbador.subtipoValor % 2 === 0) {
