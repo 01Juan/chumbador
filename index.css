@@ -98,6 +98,8 @@ h1{
   display: grid;
   grid-template-columns: 165px 105px 75px;
   gap: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .dadosEntrada ul{
@@ -227,6 +229,15 @@ label + label{
   display: none;
   overflow: hidden;
   visibility: hidden;
+}
+
+.imagem {
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  opacity: 20%;
 }
 
 footer {
