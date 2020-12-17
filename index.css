@@ -6,11 +6,12 @@ body {
   margin: 5vh auto 0 auto;
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  width: var(--largura);
   align-items: center;
   /* background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%); */
   background: linear-gradient(329.54deg, #15272b 0%, #203f3f 100%);
-  width: var(--largura);
-  height: 100%;
+  overflow-x: hidden;
 }
 
 /* se a tela tiver pelo menos 400px vai carregar esses estilos */
