@@ -94,12 +94,12 @@ function escolherTipo(){
     if (valorTipo == '') {
 
         var option = document.createElement('option')
-        option.value = '1'
+        option.value = ''
         option.text = 'Diâmetro'
         campoDiametro.add(option)
         
         var criaOpcaoTipo = document.createElement('option')
-        criaOpcaoTipo.value = '1'
+        criaOpcaoTipo.value = ''
         criaOpcaoTipo.text = 'Subtipo'
         campoSubtipos.add(criaOpcaoTipo)
 
@@ -128,7 +128,7 @@ function teste(){
     let embutimentoValor = parseFloat(campoEmbutimento.value)
     //console.log(subtipoValor + ' ' + diametroValor + ' ' + projecaoValor + ' ' + embutimentoValor)
 
-    let i = 0
+   /*  let i = 0
     let bitola = listaAtributos.slice(0,15)
     do {
         diam = bitola[i][0];
@@ -148,7 +148,7 @@ function teste(){
             document.querySelectorAll('.diamSimbolo').forEach((e)=>{e.setAttribute("value", bitola[i][0])})
         }
         i++
-    } while (i < bitola.length)
+    } while (i < bitola.length) */
 
     i = 0
     let subtipoLista = subtipos.slice(0,8)
@@ -164,16 +164,16 @@ function teste(){
         i++
     } while (i < subtipoLista.length)
 
-    let comprimentoBarra = projecaoValor + embutimentoValor - ri - diametroValor + b + Math.PI * ( ri + diametroValor / 2)
+   /*  let comprimentoBarra = projecaoValor + embutimentoValor - ri - diametroValor + b + Math.PI * ( ri + diametroValor / 2)
     let pesoBarra = 7850/1000000000 * (comprimentoBarra * Math.PI * ri * ri)
-    let pesoPorcas = nPorcas * pesoPorca
+    let pesoPorcas = nPorcas * pesoPorca */
 
     if (luva === "Não"){
-        console.log(pesoBarra + pesoPorcas + pesoArruela)
+        /* console.log(pesoBarra + pesoPorcas + pesoArruela) */
         const resultado = document.querySelector('.resultado')
         /* resultado.textContent = `Peso ` + (pesoBarra + pesoPorcas + pesoArruela) */
     } else {
-        console.log(pesoBarra + pesoPorcas + pesoArruela + " mais o peso da luva")
+        /* console.log(pesoBarra + pesoPorcas + pesoArruela + " mais o peso da luva") */
         const resultado = document.querySelector('.resultado1')
         // resultado.textContent = pesoBarra + pesoPorcas + pesoArruela + " mais o peso da luva"
     }

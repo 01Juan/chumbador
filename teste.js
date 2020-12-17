@@ -13,42 +13,19 @@ function calcularRosca(){
         comprimento: parseFloat(document.getElementById('comprimento').value),
         largura: parseFloat(document.getElementById('largura').value), */
         quantidade: parseFloat(document.getElementById('quantidade').value),
-
+        
+        tipoValor: tipo.options[tipo.selectedIndex].value,
         subtipoValor: parseFloat(subtipo.value),
         diametroValor: parseFloat(diametro.value),
         projecaoValor: parseFloat(projecao.value),
         embutimentoValor: parseFloat(embutimento.value),
 
-        abcdefghijklnRi: function () {
+/*         abcdefghijklnRi: function () {
             let i = 0
             let bitola = listaAtributos.slice(0,15)
             do {
                 diam = bitola[i][0];
                 if (diam === diametroValor) {
-                    let a = bitola[i][21]
-                    document.querySelectorAll('.a').forEach((e)=>{e.setAttribute("value", "")})
-                    document.querySelectorAll('.a').forEach((e)=>{e.setAttribute("value", a)})
-                    let b = bitola[i][22]
-                    document.querySelectorAll('.b').forEach((e)=>{e.setAttribute("value", "")})
-                    document.querySelectorAll('.b').forEach((e)=>{e.setAttribute("value", b)})
-                    let ri = bitola[i][23]
-                    document.querySelectorAll('.ri').forEach((e)=>{e.setAttribute("value", "")})
-                    document.querySelectorAll('.ri').forEach((e)=>{e.setAttribute("value", ri)})
-                    let pesoArruela = bitola[i][18]
-                    let pesoPorca = bitola[i][10]
-                    document.querySelector('.diamSimbolo').setAttribute("value", "")
-                    document.querySelector('.diamSimbolo').setAttribute("value", bitola[i][0])
-                }
-                i++
-            } while (i < bitola.length)
-        },
-
-        defghij: function () {
-            let i = 0
-            let bitola = listaAtributos.slice(0,15)
-            do {
-                diam = bitola[i][0];
-                if (diam === chumbador.diametroValor) {
                     let coluna = 21
                     let a = bitola[i][coluna]
                     document.querySelectorAll('.a').forEach((e)=>{e.setAttribute("value", "")})
@@ -64,6 +41,105 @@ function calcularRosca(){
                     let pesoPorca = bitola[i][10]
                     document.querySelector('.diamSimbolo').setAttribute("value", "")
                     document.querySelector('.diamSimbolo').setAttribute("value", bitola[i][0])
+                }
+                i++
+            } while (i < bitola.length)
+        }, */
+
+        defghij: function () {
+            let i = 0
+            let bitola = listaAtributos.slice(0,15)
+            do {
+                diam = bitola[i][0];
+                if (diam === chumbador.diametroValor) {
+                    document.querySelectorAll('.diamSimbolo').forEach((e)=>{e.setAttribute("value", "")})
+                    document.querySelectorAll('.diamSimbolo').forEach((e)=>{e.setAttribute("value", bitola[i][0])})
+                    let pesoArruela = bitola[i][18]
+                    let pesoPorca = bitola[i][10]
+
+                    if (chumbador.tipoValor === "I") {
+                        let ri = bitola[i][23]
+                        document.querySelectorAll('.ri').forEach((e)=>{e.setAttribute("value", "")})
+                        document.querySelectorAll('.ri').forEach((e)=>{e.setAttribute("value", ri)})
+                    } else {
+                        document.querySelectorAll('.ri').forEach((e)=>{e.setAttribute("value", "")})
+                    }
+
+                    if (chumbador.tipoValor === "I") {
+                        coluna = 21
+                    } else if (chumbador.tipoValor === "K") {
+                        coluna = 30
+                    } else {
+                        coluna = 36
+                    }
+
+                    let a = bitola[i][coluna]
+                    document.querySelectorAll('.a').forEach((e)=>{e.setAttribute("value", "")})
+                    document.querySelectorAll('.a').forEach((e)=>{e.setAttribute("value", a)})
+                    let b = bitola[i][coluna + 1]
+                    document.querySelectorAll('.b').forEach((e)=>{e.setAttribute("value", "")})
+                    document.querySelectorAll('.b').forEach((e)=>{e.setAttribute("value", b)})
+
+                    if (chumbador.tipoValor === "K" || chumbador.tipoValor === "M") {
+                        let c = bitola[i][coluna + 2]
+                                                document.querySelectorAll('.c').forEach((e)=>{e.setAttribute("value", c)})
+                        let d = bitola[i][coluna + 3]
+                                                document.querySelectorAll('.d').forEach((e)=>{e.setAttribute("value", d)})
+                        let ee = bitola[i][coluna + 4]
+                                                document.querySelectorAll('.e').forEach((e)=>{e.setAttribute("value", ee)})
+
+                        if (chumbador.tipoValor === "M") {
+                            let f = bitola[i][coluna + 5]
+                            
+                            document.querySelectorAll('.f').forEach((e)=>{e.setAttribute("value", f)})
+                            let g = bitola[i][coluna + 6]
+                            
+                            document.querySelectorAll('.g').forEach((e)=>{e.setAttribute("value", g)})
+                            let h = bitola[i][coluna + 7]
+                            
+                            document.querySelectorAll('.h').forEach((e)=>{e.setAttribute("value", h)})
+                            let ii = bitola[i][coluna + 8]
+                            
+                            document.querySelectorAll('.i').forEach((e)=>{e.setAttribute("value", ii)})
+                            let j = bitola[i][coluna + 9]
+                            
+                            document.querySelectorAll('.j').forEach((e)=>{e.setAttribute("value", j)})
+                            let k = bitola[i][coluna + 10]
+                            
+                            document.querySelectorAll('.k').forEach((e)=>{e.setAttribute("value", k)})
+                            let l = bitola[i][coluna + 11]
+                            
+                            document.querySelectorAll('.l').forEach((e)=>{e.setAttribute("value", l)})
+                            let n = bitola[i][coluna + 12]
+                            
+                            document.querySelectorAll('.n').forEach((e)=>{e.setAttribute("value", n)})
+                        } else {
+                            
+document.querySelectorAll('.f').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.g').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.h').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.i').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.j').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.k').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.l').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.n').forEach((e)=>{e.setAttribute("value", "")})
+                        }
+                    } else {
+                        document.querySelectorAll('.c').forEach((e)=>{e.setAttribute("value", "")})
+
+document.querySelectorAll('.d').forEach((e)=>{e.setAttribute("value", "")})
+
+document.querySelectorAll('.e').forEach((e)=>{e.setAttribute("value", "")})
+
+document.querySelectorAll('.f').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.g').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.h').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.i').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.j').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.k').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.l').forEach((e)=>{e.setAttribute("value", "")})
+document.querySelectorAll('.n').forEach((e)=>{e.setAttribute("value", "")})
+                    }
                 }
                 i++
             } while (i < bitola.length)
@@ -87,7 +163,6 @@ function calcularRosca(){
             do {
                 subt0 = subtipoLista[i][0]
                 subt1 = subtipoLista[i][1]
-                console.log(chumbador.subtipoValor)
 
                 //Poderia ser usado a linha abaixo e eliminar o DO acima também, porem se a tabela da luva for atualizada, nada mudaria aqui.
                 // if (chumbador.subtipoValor % 2 === 0) {
@@ -135,7 +210,8 @@ function calcularRosca(){
             } while (i < subtipoLista.length)
         }
     }
-    chumbador.rosca()
+
     chumbador.defghij()
+    chumbador.rosca()
     chumbador.luva()
 }
