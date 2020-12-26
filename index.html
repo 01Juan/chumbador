@@ -16,16 +16,22 @@
         <title>Chumbador</title>
     </head>
     <body>
-        <div class="fundo"></div>
+        <div id="fundo"></div>
+        <div id="menu-lateral"></div>
+        <div class="btn-header">
+            <a href="" id="btn-menu">
+                <p>Imagem</p>
+            </a>
+        </div>
         <header>
             <i class="fas fa-bars">
                 <div class="notas">
                     <h3>NOTAS GERAIS</h3>
                     <ol>
                         <li>MEDIDAS EM MILÍMETRO.</li>
-                        <li>CHUMBADORES PORCAS E ARRUELAS ESPECIFICADOS CONFORME NORMA PETROBRAS N-134 - CHUMBADORES PARA CONCRETO.</li>
+                        <li>CHUMBADORES PORCAS E ARRUELAS ESPECIFICADOS CONFORME NORMA - CHUMBADORES PARA CONCRETO.</li>
                         <li>OS CHUMBADORES E PORCAS TERÃO ROSCA MÉTRICA NORMAL DE USO GERAL DE  ACORDO COM AS NORMAS NBR ISO 262, NBR ISO 724 E NBR ISO 965.</li>
-                        <li>OS CHUMBADORES DEVERÃO RECEBER PINTURA CONFORME A N-134.</li>
+                        <li>OS CHUMBADORES DEVERÃO RECEBER PINTURA CONFORME A NORMA.</li>
                         <li>OS CHUMBADORES DEVERÃO RECEBER PROTEÇÃO COM USO DE "CAP" RÍGIDO DE PVC UNTADO PREVIAMENTE COM GRAXA AMARELA EM SUA PROJEÇÃO. ESTA GRAXA DEVERÁ SER REMOVIDA ANTES DA FIXAÇÃO DO EQUIPAMENTO.</li>
                         <li>A ENTRADA DE ÁGUA NAS LUVAS DEVE SER IMPEDIDA.</li>
                         <li>MATERIAIS:</li>
@@ -94,7 +100,7 @@
                     <input type="number" id="largura" min="0" oninput="validity.valid||(value='')">
  -->
                     <label for="quantidade">Quantidade:</label>
-                    <input type="number" id="quantidade" min="0" oninput="validity.valid||(value='')">
+                    <input type="number" id="quantidade" onchange="calcularRosca()" min="0" oninput="validity.valid||(value='')">
                 </ul>
             </div>
 
@@ -161,67 +167,77 @@
             </div>
         </div>
         <div class="imagem">
-            <img class="tipoI" src="Tipo_II.png" alt="">
+            <!-- <img class="tipoI" src="Tipo_II.png" alt=""> -->
             <!-- <img class="tipoK" src="Tipo_K.png" alt="">
             <img class="tipoM" src="Tipo_M.png" alt=""> -->
         </div>
 
-        <!-- <div class="tabela">
-            <div class="resultado1">N°</div>
-            <div class="resultado2">QTD</div>
-            <div class="resultado3">Descrição</div>
-            <div class="resultado4">Comp(m)/Área(m²)</div>
-            <div class="resultado5">Massa Unit. (Kg/m ; Kg/m²)</div>
-            <div class="resultado6">Massa Total (Kg)</div>
-            <div class="resultado7">0</div>
-            <div class="resultado8">0</div>
-            <div class="resultado9">0</div>
-            <div class="resultado10">0</div>
-            <div class="resultado11">0</div>
-            <div class="resultado12">0</div>
-            <div class="resultado13">0</div>
-            <div class="resultado14">0</div>
-            <div class="resultado15">0</div>
-            <div class="resultado16">0</div>
-            <div class="resultado17">0</div>
-            <div class="resultado18">0</div>
-            <div class="resultado19">0</div>
-            <div class="resultado20">0</div>
-            <div class="resultado21">0</div>
-            <div class="resultado22">0</div>
-            <div class="resultado23">0</div>
-            <div class="resultado24">0</div>
-            <div class="resultado25">0</div>
-            <div class="resultado26">0</div>
-            <div class="resultado27">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">0</div>
-            <div class="resultado">10</div>
-        </div> -->
+        <div class="tabela">
+            <div class="titulo">N°</div>
+            <div class="titulo">QTD</div>
+            <div class="titulo">Discriminação (Aço_Carbono)</div>
+            <div class="titulo">Comp(m)/Área(m²)</div>
+            <div class="titulo">Massa Unit. (Kg/m;Kg/m²)</div>
+            <div class="titulo">Massa Total_(Kg)</div>
+            <div class="titulo">Especificação</div>
+
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+            <div class="resultado"></div>
+        </div>
         
         <footer>
             <!--Informações de contato-->
