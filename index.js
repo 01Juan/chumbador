@@ -1,5 +1,5 @@
 //Tabela com a lista de atributos de Porcas, Arruelas, Chumbadores e Luva organizados por diâmetros do chumbadores
-let listaAtributos = [
+const listaAtributos = [
     //Colunas
     //Porcas																				//ARRUELA LISA CIRCULAR															CHUMBADORES																												
     //Diâm.	kg/m²	s-mín.	s-máx.	m-mín.	m-máx.	e-mín.	da-mín.	da-máx.	dw-mín. Kg		//Diâm externo d¹	Diâm externo d²	Espessura h			Massa Kg		Tipo D		Tipo I			Tipo G									Tipo K							Tipo M													LUVAS
@@ -24,7 +24,7 @@ let listaAtributos = [
 //Tabela com os detalhes de cada subtipo dos chumbadores
 //Colunas
 //Nº,	Luva,	Arruela Lisa,	Arruela de Pressão,	Nº de Porcas
-let subtipos = [
+const subtipos = [
     [1, 'Não', 'Sim', 'Não', 1],
     [2, 'Sim', 'Sim', 'Não', 1],
     [3, 'Não', 'Sim', 'Não', 2],

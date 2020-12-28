@@ -15,30 +15,6 @@ body {
 }
 /* background: linear-gradient(329.54deg, #29b6d1 0%, #00c7c7 100%); */
 
-.btn-header {
-  z-index: 9;
-}
-
-#menu-lateral{
-  position: absolute;
-  background-color: none;
-  background-image: url("Tipo_II.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  width: var(--largura);
-  min-height: 100vh;
-  background-size: 20rem;
-  opacity : 0.2;
-  z-index: 0;
-  transition: .7s;
-}
-
-.toggleMenu {
-  opacity : 1 !important;
-  z-index: 2 !important;
-  background-color: rgba(256, 256, 256, .8) !important;
-}
-
 /* se a tela tiver pelo menos 400px vai carregar esses estilos */
 /* @media (max-width: 500px) {
  body {
@@ -56,6 +32,8 @@ header {
   color: #990000;
   line-height: 5vh;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
 }
 
 header i {
@@ -108,6 +86,35 @@ i.fa-bars {
   grid-template-columns: 1fr 1fr;
   grid-gap: 1px 5px;
   list-style-type: '-';
+}
+
+.btn-header {
+  z-index: 9;
+  margin-right: 5px;
+}
+
+.btn-header p {
+  color: #990000;
+}
+
+#menu-lateral{
+  position: absolute;
+  background-color: none;
+  background-image: url("Tipo_II.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: var(--largura);
+  min-height: 90vh;
+  background-size: contain;
+  opacity : 0.2;
+  z-index: 0;
+  transition: opacity .7s, z-index .7s, background-color .7s;
+}
+
+.toggleMenu {
+  opacity : 1 !important;
+  z-index: 2 !important;
+  background-color: rgba(256, 256, 256, .8) !important;
 }
 
 h1{

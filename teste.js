@@ -183,6 +183,8 @@ function calcularRosca(){
 
         //Preenche a tabela com os dados
         tabela: function () {
+
+            //Número da linha
             let ii = 1
             for (let i = 0; i <= 50; i = 7 + i) {
                 //Linha
@@ -199,7 +201,7 @@ function calcularRosca(){
                             document.getElementsByClassName("resultado")[i + 1].innerHTML = chumbador.quantidade * subt4
                         }
                     }
-                } else if (i + 1 === 29) {
+                } else if (chumbador.tipoValor === "M" && i + 1 === 29) {
                     document.getElementsByClassName("resultado")[i + 1].innerHTML = chumbador.quantidade * 4
                 } else {
                     document.getElementsByClassName("resultado")[i + 1].innerHTML = chumbador.quantidade
@@ -212,11 +214,11 @@ function calcularRosca(){
                     document.getElementsByClassName("resultado")[i + 2].innerHTML = "PORCA SEXTAVADA PESADA"
                 } else if (i + 2 === 16) {
                     document.getElementsByClassName("resultado")[i + 2].innerHTML = "ARRUELA CIRCULAR LISA"
-                } else if (i + 2 === 23) {
+                } else if ((chumbador.tipoValor === "K" || chumbador.tipoValor === "M") && i + 2 === 23) {
                     document.getElementsByClassName("resultado")[i + 2].innerHTML = "CHAPA # " + parseFloat(document.querySelectorAll('.dadosSaidaChumbador .b')[1].value) + "mm"
-                } else if (i + 2 === 30) {
+                } else if ((chumbador.tipoValor === "K" || chumbador.tipoValor === "M") && i + 2 === 30) {
                     document.getElementsByClassName("resultado")[i + 2].innerHTML = "CHAPA # " + parseFloat(document.querySelectorAll('.dadosSaidaChumbador .h')[1].value) + "mm"
-                } else if (i + 2 === 37) {
+                } else if ((chumbador.tipoValor === "K" || chumbador.tipoValor === "M") && i + 2 === 37) {
                     document.getElementsByClassName("resultado")[i + 2].innerHTML = "CHAPA # " + parseFloat(document.querySelectorAll('.dadosSaidaChumbador .k')[1].value) + "mm"
                 } else if (i + 2 === 44) {
                     document.getElementsByClassName("resultado")[i + 2].innerHTML = "TUBO  Ø " + parseFloat(document.querySelectorAll('.dadosSaidaLuva .f')[1].value) + "mm"
@@ -227,9 +229,20 @@ function calcularRosca(){
                 //Comp. / Área
                 if ((chumbador.tipoValor === "K" || chumbador.tipoValor === "M") && i + 3 === 3) {
                     document.getElementsByClassName("resultado")[i + 3].innerHTML = chumbador.projecao + chumbador.embutimento
+                } else if ((chumbador.tipoValor === "I") && i + 3 === 3) {
+                    document.getElementsByClassName("resultado")[i + 3].innerHTML = chumbador.projecao + chumbador.embutimento + Math.abs(document.getElementsByClassName("b")[1].value)
+                } else if (i + 3 === 10 || i + 3 === 17) {
+                    document.getElementsByClassName("resultado")[i + 3].innerHTML = "-"
+                } else if (i + 3 === 24) {
+                    document.getElementsByClassName("resultado")[i + 3].innerHTML = "-"
+                } else if (i + 3 === 31) {
+                    let dimensaoF = Math.abs(document.getElementsByClassName("f")[1].value) / 1000
+                    let dimensaoG = Math.abs(document.getElementsByClassName("g")[1].value) / 1000
+                    document.getElementsByClassName("resultado")[i + 3].innerHTML = (((dimensaoF + dimensaoG) * (dimensaoF + dimensaoG) - (dimensaoG * dimensaoG) / 2) * 4).toFixed(4)
                 } else {
                     document.getElementsByClassName("resultado")[i + 3].innerHTML = "Pendente"
                 }
+
                 //Massa Unit.
                 document.getElementsByClassName("resultado")[i + 4].innerHTML = 555
                 //Massa Total
@@ -248,6 +261,18 @@ function calcularRosca(){
                     document.getElementsByClassName("resultado")[i + 6].innerHTML = ""
                 }
             }
+        },
+
+        //Troca a imagem
+        imagem: function () {
+            const menuLateral = document.getElementById("menu-lateral")
+            if (chumbador.tipoValor === "I") {
+                menuLateral.style.backgroundImage = "url('Tipo_II.png')"
+            } else if (chumbador.tipoValor === "K") {
+                menuLateral.style.backgroundImage = "url('Tipo_KK.png')"
+            } else {
+                menuLateral.style.backgroundImage = "url('Tipo_MM.png')"
+            }
         }
     }
 
@@ -255,14 +280,15 @@ function calcularRosca(){
     chumbador.rosca()
     chumbador.luva()
     chumbador.tabela()
+    chumbador.imagem()
 }
 
 window.onload = function(){ 
-    var clique = document.getElementById("btn-menu");
-    var menuLateral = document.getElementById("menu-lateral");
-    
+    var clique = document.getElementById("btn-menu")
+    var menuLateral = document.getElementById("menu-lateral")
+
     clique.onclick = function (e) {
-        e.preventDefault();
-        menuLateral.classList.toggle('toggleMenu');
-    };
-};
+        e.preventDefault()
+        menuLateral.classList.toggle('toggleMenu')
+    }
+}
