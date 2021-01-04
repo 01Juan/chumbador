@@ -1,5 +1,8 @@
 :root {
     --largura: 500px;
+    --icones: #062c68;
+    --margin: min(5vh, 46px);
+    --body: calc(100vh - var(--margin) * 2);
   }
   
   /* soft reset do css */

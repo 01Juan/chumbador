@@ -2,7 +2,7 @@
 const listaAtributos = [
     //Colunas
     //Porcas																				//ARRUELA LISA CIRCULAR															CHUMBADORES																												
-    //Diâm.	kg/m²	s-mín.	s-máx.	m-mín.	m-máx.	e-mín.	da-mín.	da-máx.	dw-mín. Kg		//Diâm externo d¹	Diâm externo d²	Espessura h			Massa Kg		Tipo D		Tipo I			Tipo G									Tipo K							Tipo M													LUVAS
+    //Diâm.	kg/m²	s-mín.	s-máx.	m-mín.	m-máx.	e-mín.	da-mín.	da-máx.	dw-mín. Kg		//Diâm externo d¹	Diâm externo d²	Espessura h			Massa Kg		Tipo D		Tipo I			Tipo G									Tipo K							Tipo M											        		LUVAS
                                                                                             //mín.	máx.	máx.	mín.	nom.	máx.	mín.					A		B	A		B	Ri	A		B		C		D		r	Ri	A		B		C	D	E		A		B	C	D   E   F	G		H		I	J	K	N		D		E		F		G		H		I	J
     [10,	0.62,	15.73,	16,		8.04,	8.4,	17.77,	10,		10.8,	14.6,	0.0106,	11,		11.43,	20,		18.7,	2,		2.3,	1.7,	0.0039,			0,		0,	69,		20,	20,	0,		0,		0,		0,		0,	0,	0,		0,		0,	0,	0,	0,	0,		0,	0,	"",	"",	0,	0,		0,		0,	0,	0,	0,		0,		0,		0,		0,		0,		0,	0],
     [12.5,	0.96,	17.73,	18,		10.08,	10.37,	20.03,	12,		13,		16.6,	0.0163,	13.5,	13.93,	24,		22.7,	2.5,	2.8,	2.2,	0.0068,			0,		0,	83,		24,	24,	0,		0,		0,		0,		0,	0,	0,		0,		0,	0,	0,	0,	0,		0,	0,	"",	"",	0,	0,		0,		0,	0,	0,	0,		0,		0,		0,		0,		0,		0,	0],
@@ -34,6 +34,9 @@ const subtipos = [
     [7, 'Não', 'Não', 'Sim', 2],
     [8, 'Sim', 'Não', 'Sim', 2]
 ]
+
+//Peso específico do aço
+const pesoAco = 7850
 
 //Cria as opções para cada tipo de chumbador
 function criaOpcoes(a,b,c,d){
